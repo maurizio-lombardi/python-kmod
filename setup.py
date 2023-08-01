@@ -15,6 +15,7 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with python-kmod.  If not, see <http://www.gnu.org/licenses/>.
 from setuptools import setup
+from distutils.core import setup
 from distutils.extension import Extension as _Extension
 import os as _os
 import sys as _sys
@@ -61,5 +62,4 @@ setup(
     cmdclass = {'build_ext': build_ext_workaround},
     ext_modules=ext_modules,
     install_requires=["Cython"],
-    setup_requires=["Cython"],
     )
