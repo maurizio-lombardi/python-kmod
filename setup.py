@@ -14,19 +14,14 @@
 #
 # You should have received a copy of the GNU Lesser General Public License
 # along with python-kmod.  If not, see <http://www.gnu.org/licenses/>.
-from setuptools import setup
+
 from distutils.core import setup
 from distutils.extension import Extension as _Extension
 import os as _os
 import sys as _sys
 import platform
 
-
-def build_ext_workaround(*args, **kwargs):
-    # We want to use Cython to build the ext, but if it is not installed,
-    # We need to tell easy_instll it is required
-    from Cython.Distutils import build_ext as _build_ext
-    return _build_ext(*args, **kwargs)
+from Cython.Distutils import build_ext as _build_ext
 
 
 package_name = 'kmod'
@@ -59,7 +54,6 @@ setup(
     provides=[package_name],
     maintainer="Andy Grover",
     maintainer_email="agrover@redhat.com",
-    cmdclass = {'build_ext': build_ext_workaround},
+    cmdclass = {'build_ext': _build_ext},
     ext_modules=ext_modules,
-    install_requires=["Cython"],
     )
