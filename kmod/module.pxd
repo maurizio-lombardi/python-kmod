@@ -14,8 +14,8 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with python-kmod.  If not, see <http://www.gnu.org/licenses/>.
 
-cimport _libkmod_h
-cimport list as _list
+cimport kmod._libkmod_h as _libkmod_h
+cimport kmod.list as _list
 
 
 cdef class Module (object):
