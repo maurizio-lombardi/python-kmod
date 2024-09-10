@@ -18,12 +18,14 @@ import collections as _collections
 
 cimport libc.errno as _errno
 
-cimport _libkmod_h
-from error import KmodError as _KmodError
-cimport list as _list
-import list as _list
-cimport _util
-import _util
+cimport kmod._libkmod_h as _libkmod_h
+
+
+from kmod.error import KmodError as _KmodError
+cimport kmod.list as _list
+import kmod.list as _list
+cimport kmod._util as _util
+import kmod._util as _util
 
 
 cdef class Module (object):

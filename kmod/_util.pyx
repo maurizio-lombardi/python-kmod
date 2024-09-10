@@ -16,7 +16,9 @@
 
 import sys as _sys
 
-cimport _libkmod_h
+cimport kmod._libkmod_h as _libkmod_h
+
+
 
 
 cdef object char_ptr_to_str(_libkmod_h.const_char_ptr char_ptr):

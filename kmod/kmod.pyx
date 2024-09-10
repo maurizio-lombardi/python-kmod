@@ -18,12 +18,12 @@
 "Define the Kmod class"
 
 cimport cython as _cython
-cimport _libkmod_h
-from error import KmodError as _KmodError
-cimport module as _module
-import module as _module
-cimport list as _list
-import list as _list
+cimport kmod._libkmod_h as _libkmod_h
+from kmod.error import KmodError as _KmodError
+cimport kmod.module as _module
+import kmod.module as _module
+cimport kmod.list as _list
+import kmod.list as _list
 
 
 cdef class Kmod (object):
